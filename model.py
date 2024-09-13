@@ -136,6 +136,7 @@ result = pd.concat([passenger_id_df, predictions], axis=1)
 result["Survived"][result["Survived"] > threshold] = 1
 result["Survived"][result["Survived"] <= threshold] = 0
 result.reset_index(drop=True, inplace=True)
+result["Survived"] = result["Survived"].astype(int)
 
 result.to_csv("result.csv", index = False)
 print(f"Predictions: {result[:10]}")
