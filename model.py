@@ -137,6 +137,6 @@ result["Survived"][result["Survived"] > threshold] = 1
 result["Survived"][result["Survived"] <= threshold] = 0
 result.reset_index(drop=True, inplace=True)
 
-result.to_csv("result.csv")
+result.to_csv("result.csv", index = False)
 print(f"Predictions: {result[:10]}")
 print(f"shape: {result.shape}")
