@@ -19,7 +19,7 @@ def read_data():
     return X, y_train, test
 
 def train(X, y_train):
-    model = MLPClassifier(solver='adam', alpha=1e-5, hidden_layer_sizes=(56, 28), max_iter=20 ,random_state=1, batch_size=32, verbose=True)
+    model = MLPClassifier(solver='adam', alpha=1e-5, hidden_layer_sizes=(128, 64), max_iter=30 ,random_state=1, batch_size=32, verbose=True)
     model.fit(X, y_train)
     loss_values = model.loss_curve_
 
